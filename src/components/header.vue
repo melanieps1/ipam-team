@@ -1,21 +1,24 @@
 <template>
-  <header id="app-header">
-    <div id="blue-navbar">
-    	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
+<div id="app-header">
+  <v-toolbar id="blue-navbar" class="pt-3 pr-1 pl-2">
+    	<img id="ipam-logo-white" class="pb-2" src="../assets/ipamlogowhite.png">
+    	<v-spacer></v-spacer>
     	<span id="user">
     		Logged in as <span id="username">{{ user }}</span>
     		<button id="logout">Manage Users</button>
     		<button id="manageUsers">Log Out</button>
    	 	</span>
-    </div>
-    <nav id="white-navbar" class="left">
+   </v-toolbar>
+   <v-tabs id="white-navbar">
+    <nav>
 	    <ul>
 	    	<li class="nav"><router-link to="/">SITES</router-link></li>
 	    	<li class="nav"><router-link to="/components">SUBNETS</router-link></li>
 	    	<li class="nav"><router-link to="/equipment">EQUIPMENT</router-link></li>
 	    </ul>
     </nav>
-  </header>
+  	</v-tabs>
+</div>
 </template>
 
 
@@ -32,16 +35,18 @@
 
 <style>
 
+
 #blue-navbar {
-	width: 100%;
-	height: 83px;
 	background-color: #3F86BA;
+	height: 83px;
 }
 
+
 #white-navbar {
-	width: 100%;
-	height: 55px;
 	background-color: #FFFFFF;
+	height: 55px;
+	width: 100%;
+	box-shadow: 0px 1px 6px 0 rgba(0,0,0,0.3);
 }
 
 li.nav {
@@ -56,21 +61,12 @@ li.nav {
 	text-align: center;
 }
 
-#ipam-logo-white {
-	margin-top: 24px;
-	margin-bottom: 24px;
-	margin-left: 40px;
-}
-
 a, a:visited {
 	text-decoration: none;
 	color: #757575;
 }
 
 #user {
-	float: right;
-	margin-top: 25.5px;
-	margin-right: 52px;
 	color: white;
 }
 
