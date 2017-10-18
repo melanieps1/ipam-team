@@ -9,13 +9,13 @@
     		<button id="manageUsers">Log Out</button>
    	 	</span>
    </v-toolbar>
-   <v-tabs v-model="active">
+   <v-tabs class="elevation-2" v-model="active">
         <v-tabs-bar id="white-navbar" class="white">
           <v-tabs-item
             v-for="tab in tabs"
             :key = "tab"
-            :href="'#' + tab"
-          ><router-link v-bind:to="tab.path">
+            :href="'#' + tab">
+          <router-link v-bind:to="tab.path">
             {{ tab.name }}
           </router-link></v-tabs-item>
           <v-tabs-slider color="blue"></v-tabs-slider>
@@ -68,9 +68,9 @@
 #white-navbar {
 	height: 55px;
 	width: 100%;
-	box-shadow: 0px 1px 6px 0 rgba(0,0,0,0.3);
 	font-weight: bold;
 	padding-left: 20px;
+	opacity: 70%;
 }
 
 li.tabs__slider.blue {
@@ -85,8 +85,9 @@ a, a:visited {
 
 #user {
 	color: white;
-	margin-top: 25.5px;
 	margin-right: 39.5px;
+	margin-top: 23.5px;
+	height: 32px;
 }
 
 #username {
@@ -96,12 +97,12 @@ a, a:visited {
 #logout, #manageUsers {
 	box-sizing: border-box;
 	border: 1px white solid;
+	border-radius: 2px;
 	padding: 6.5px 12.5px;
 	margin-left: 23px;
-	border-radius: 2px;
 	line-height: 19px;
 	font-size: 14px;
-	height: 39.5px;
+	height: 32px;
 }
 
 a.tabs__item.tabs__item--active {
@@ -118,8 +119,7 @@ a.tabs__item.tabs__item--active > a {
 	display: inline-block;
 	padding-top: 24px;
 	padding-left: 20px;
-	padding-right: 20px
+	padding-right: 20px;
 }
-
 
 </style>
