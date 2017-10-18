@@ -7,9 +7,9 @@
     </div>
     <nav id="white-navbar" class="left">
 	    <ul>
-	    	<li>SITES</li>
-	    	<li>SUBNETS</li>
-	    	<li>EQUIPMENT</li>
+	    	<li><router-link to="/">SITES</router-link></li>
+	    	<li><router-link to="/components">SUBNETS</router-link></li>
+	    	<li><router-link to="/equipment">EQUIPMENT</router-link></li>
 	    </ul>
     </nav>
   </header>
@@ -54,6 +54,11 @@ li {
 	margin-top: 24px;
 	margin-bottom: 24px;
 	margin-left: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: #757575;
 }
 
 </style>

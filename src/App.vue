@@ -1,6 +1,7 @@
 <template>
   <v-app light>
     <app-header></app-header>
+    <router-view></router-view>
   </v-app>
 </template>
 
