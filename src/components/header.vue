@@ -2,14 +2,17 @@
   <header id="app-header">
     <div id="blue-navbar">
     	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
-    	<div id="user">
-   	 	</div>
+    	<span id="user">
+    		Logged in as <span id="username">{{ user }}</span>
+    		<button id="logout">Manage Users</button>
+    		<button id="manageUsers">Log Out</button>
+   	 	</span>
     </div>
     <nav id="white-navbar" class="left">
 	    <ul>
-	    	<li><router-link to="/">SITES</router-link></li>
-	    	<li><router-link to="/components">SUBNETS</router-link></li>
-	    	<li><router-link to="/equipment">EQUIPMENT</router-link></li>
+	    	<li class="nav"><router-link to="/">SITES</router-link></li>
+	    	<li class="nav"><router-link to="/components">SUBNETS</router-link></li>
+	    	<li class="nav"><router-link to="/equipment">EQUIPMENT</router-link></li>
 	    </ul>
     </nav>
   </header>
@@ -19,6 +22,11 @@
 <script>
   export default {
   	name: 'app-navbar',
+  	data () {
+  		return {
+  			user: "Melanie Stoeckle"
+  		}
+  	}
   }
 </script>
 
@@ -36,10 +44,9 @@
 	background-color: #FFFFFF;
 }
 
-li {
+li.nav {
 	display: inline-block;
-	margin-top: 24px;
-	margin-bottom: 12px;
+	margin: 24px 37px 12px 0px;
 	font-weight: bold;
 	font-family: Roboto, sans-serif;
 	color: #757575;
@@ -47,7 +54,6 @@ li {
 	line-height: 19px;
 	width: 39px;
 	text-align: center;
-	margin-right: 37px
 }
 
 #ipam-logo-white {
@@ -56,9 +62,28 @@ li {
 	margin-left: 40px;
 }
 
-a {
+a, a:visited {
 	text-decoration: none;
 	color: #757575;
+}
+
+#user {
+	float: right;
+	margin-top: 25.5px;
+	margin-right: 52px;
+	color: white;
+}
+
+#username {
+	font-weight: bold;
+}
+
+#logout, #manageUsers {
+	box-sizing: border-box;
+	border: 1px white solid;
+	padding: 6.5px 12.5px;
+	margin-left: 48px;
+	border-radius: 2px;
 }
 
 </style>
