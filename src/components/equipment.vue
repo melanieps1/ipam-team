@@ -22,8 +22,7 @@
               single-line
               auto
               props="filter"
-              v-bind:items="unfiltered"
-              item-text="site[0].name"
+              v-bind:items="uniqueSites"
               v-model="select1"
               hide-details>
             </v-select>
@@ -36,8 +35,7 @@
               auto
               props="filter"
               v-model="select2"
-              v-bind:items="unfiltered"
-              item-text="subnet_id"
+              v-bind:items="uniqueSubnets"
               hide-details>
             </v-select>
           </v-flex>
@@ -92,13 +90,38 @@
     watch : {
 
       select1 : function() {
-        console.log(this.select1.site[0].name);
+        console.log(this.select1);
+        this.items = [];
         for(var i=0;i<this.unfiltered.length;i++) {
-          if(this.unfiltered[i].site[0].name === this.select1.site[0].name) {
+          if(this.unfiltered[i].site[0].name === this.select1) {
             this.items.push(this.unfiltered[i])   
           }
         }
-      } 
+      },
+
+      select2 : function() {
+        console.log(this.select2);
+        this.items = [];
+        for(var i=0;i<this.unfiltered.length;i++) {
+          if(this.unfiltered[i].subnet_id === this.select2) {
+            this.items.push(this.unfiltered[i])   
+          }
+        }
+      },
+
+      unfiltered : function() {
+        console.log(this.unfiltered);
+        for(var i=0;i<this.unfiltered.length;i++) {
+          
+          if(!this.uniqueSites.includes(this.unfiltered[i].site[0].name)) {
+            this.uniqueSites.push(this.unfiltered[i].site[0].name);
+          }
+
+          if(!this.uniqueSubnets.includes(this.unfiltered[i].subnet_id)) {
+            this.uniqueSubnets.push(this.unfiltered[i].subnet_id);
+          }
+        }
+      }
 
     },
 
@@ -134,6 +157,8 @@
         items : [],
         select1 : '',
         select2 : '',
+        uniqueSites : [],
+        uniqueSubnets : []
       }
     }
   }
