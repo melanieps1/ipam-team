@@ -92,8 +92,9 @@
     watch : {
 
       select1 : function() {
+        console.log(this.select1.site[0].name);
         for(var i=0;i<this.unfiltered.length;i++) {
-          if(this.unfiltered[i].site[0].name === this.select1) {
+          if(this.unfiltered[i].site[0].name === this.select1.site[0].name) {
             this.items.push(this.unfiltered[i])   
           }
         }
