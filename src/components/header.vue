@@ -1,8 +1,11 @@
 <template>
   <header id="app-header">
     <div id="blue-navbar">
+    	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
+    	<div id="user">
+   	 	</div>
     </div>
-    <nav id="white-navbar">
+    <nav id="white-navbar" class="left">
 	    <ul>
 	    	<li>SITES</li>
 	    	<li>SUBNETS</li>
@@ -44,7 +47,13 @@ li {
 	line-height: 19px;
 	width: 39px;
 	text-align: center;
-	margin-right: 37px;
+	margin-right: 37px
+}
+
+#ipam-logo-white {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	margin-left: 40px;
 }
 
 </style>
