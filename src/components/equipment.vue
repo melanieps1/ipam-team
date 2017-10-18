@@ -21,9 +21,10 @@
               label="Select"
               single-line
               auto
-              props = "filter"
-              v-bind:headers = "select1headers"
-              v-bind:items = "selectSite.name"
+              props="filter"
+              v-bind:items="unfiltered"
+              item-text="site[0].name"
+              v-model="select1"
               hide-details>
             </v-select>
           </v-flex>
@@ -33,14 +34,12 @@
               label="Select"
               single-line
               auto
-              v-bind:items = "selectSubnet"
+              props="filter"
+              v-model="select2"
+              v-bind:items="unfiltered"
+              item-text="subnet_id"
               hide-details>
             </v-select>
-          </v-flex>
-          <v-flex xs2>
-            <v-btn color="secondary" dark>
-              Add Equipment
-            </v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -78,24 +77,33 @@
 
 <script>
 
+  import subnetsFilter from './subnetsFilter.vue'
+  import sitesfilter from './sitesfilter.vue'
+
   export default {
-  	name: 'subnets',
-    beforeMount() {
+  	name: 'equipment',
+    beforeMount: function() {
       var self = this;
       axios.get("http://ipam-backend.herokuapp.com/api/equipment")
-        .then(response => self.items = response.data);
-
-      axios.get("http://ipam-backend.herokuapp.com/api/sites")
-        .then(response => self.selectSite = response.data);
+        .then(response => self.unfiltered = response.data);
       
-      for(var i=0;i<self.selectSite.length;i++) {
-          self.select1names.append(self.selectSite[i].name);
+    },
+
+    watch : {
+
+      select1 : function() {
+        for(var i=0;i<this.unfiltered.length;i++) {
+          if(this.unfiltered[i].site[0].name === this.select1) {
+            this.items.push(this.unfiltered[i])   
+          }
         }
+      } 
 
     },
 
-    mounted () {
-      console.log(this.items);
+    components : {
+      subnetsFilter,
+      sitesfilter
     },
 
     data () {
@@ -121,13 +129,10 @@
         { text: 'Equipment Type', value: 'type[0].name' },
         { text: 'Notes', value: 'notes.text' }
         ],
-        select1headers: [
-          { text: 'Site', value: 'name' }
-        ],
-        items: [],
-        selectSite: [],
-        select1names: [],
-        selectSubnet: [],
+        unfiltered : [],
+        items : [],
+        select1 : '',
+        select2 : '',
       }
     }
   }
