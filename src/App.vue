@@ -1,10 +1,17 @@
 <template>
   <v-app light>
-    <h1>Hello world</h1>
+    <app-header></app-header>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
+
+import header from './components/header.vue'
+
   export default {
+  	components: {
+  		'app-header': header,
+  	}
   }
 </script>
