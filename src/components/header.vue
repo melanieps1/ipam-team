@@ -107,10 +107,18 @@ a, a:visited {
 a.tabs__item.tabs__item--active {
 	font-size: 14px;
 	line-height: 19px;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+}
+
+a.tabs__item.tabs__item--active > a {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
 	padding-top: 24px;
 	padding-left: 20px;
-	padding-right: 20px;
-	display: inline-block;
+	padding-right: 20px
 }
 
 
