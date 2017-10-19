@@ -1,13 +1,25 @@
 <template>
 <div id="app-header">
+
   <v-toolbar id="blue-navbar">
     	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
     	<v-spacer></v-spacer>
     	<span id="user">
     		<span id="loggedInAs">Logged in as <span id="username">{{ user }}</span></span>
-    		<button id="logout">Manage Users</button>
-    		<button id="manageUsers">Log Out</button>
+    		<button id="logout" class="userOptions">Manage Users</button>
+    		<button id="manageUsers" class="userOptions">Log Out</button>
    	 	</span>
+ 		<v-menu>
+	 		<v-btn icon slot="activator" id="responsiveHeaderMenu" dark>
+	 			<v-icon>more_vert</v-icon>
+	 		</v-btn>
+	 		<v-list bottom left>
+	 			<v-list-tile>
+	 				<v-list-tile-title>Manage Users</v-list-tile-title>
+	 				<v-list-tile-title>Logout</v-list-tile-title>
+	 			</v-list-tile>
+	 		</v-list>
+	 	</v-menu>
    </v-toolbar>
    <v-tabs class="elevation-2" v-model="active">
         <v-tabs-bar id="white-navbar" class="white">
@@ -105,9 +117,30 @@ a, a:visited {
 	height: 32px;
 }
 
+#responsiveHeaderMenu {
+	display: none;
+	margin-top: 29.5px;
+}
+
 @media only screen and (max-width: 670px) {
 	[id="loggedInAs"] {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.userOptions {
+		display: none;
+	}
+
+	#responsiveHeaderMenu {
+		display: inline;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	[id="responsiveHeaderMenu"] {
+		display: inline;
 	}
 }
 
