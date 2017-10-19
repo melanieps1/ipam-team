@@ -1,14 +1,22 @@
 <template>
 
 	<div id="siteCard">
-		<v-layout row wrap>
-			<v-flex xs3 sm3>
-				<v-card class="siteCard ml-4 mt-4 pa-0" height="142px" v-for="item in items">
-		      <v-card-title class="primary-title ma-0 pa-4"><h3 class="ma-0" v-bind:items="items">{{ item.name }}</h3>
-		      </v-card-title>
-		    </v-card>
-	  	</v-flex>
-  </v-layout>
+		<v-container  class="pa-0 fluid" v-bind="{ [`grid-list-md`]: true }">
+			<v-layout row wrap class="ma-4">
+				<v-flex
+					class="md-3 pa-2"
+					v-for="item in items"
+					v-bind:key="item.name">
+					<v-card
+						class="siteCard pa-0"
+						height="150px">
+			      <v-card-title class="primary-title ma-0 pa-4">
+			      	<h3 class="ma-0">{{ item.name }}</h3>
+			      </v-card-title>
+			    </v-card>
+		  	</v-flex>
+	  	</v-layout>
+		</v-container>
 	</div>
 	
 </template>
@@ -38,9 +46,14 @@ export default {
 <style>
 
 .siteCard {
-	min-width: 250px;
+	min-width: 300px;
 	overflow: scroll;
-	position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+    [class*="siteCard"] {
+    	width: 100%;
+    }
 }
 
 h3 {
