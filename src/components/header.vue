@@ -37,10 +37,12 @@
           <v-tabs-item
             v-for="tab in tabs"
             :key = "tab"
-            :href="'#' + tab">
+            :href="'#' + tab"
+          >
           <router-link v-bind:to="tab.path">
             {{ tab.name }}
-          </router-link></v-tabs-item>
+          </router-link>
+      	  </v-tabs-item>
           <v-tabs-slider color="blue"></v-tabs-slider>
         </v-tabs-bar>
   	</v-tabs>
@@ -93,12 +95,10 @@
 	width: 100%;
 	font-weight: bold;
 	padding-left: 20px;
-	opacity: 70%;
 }
 
 li.tabs__slider.blue {
 	height: 4px;
-	width: 80%;
 }
 
 a, a:visited {
@@ -170,6 +170,11 @@ a.tabs__item.tabs__item--active > a {
 	padding-top: 24px;
 	padding-left: 20px;
 	padding-right: 20px;
+	opacity: 0.7;
+}
+
+.router-link-exact-active{
+	opacity: 1 !important;
 }
 
 </style>
