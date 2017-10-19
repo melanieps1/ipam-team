@@ -1,14 +1,10 @@
 <template>
 
 	<div id="siteCard">
-		<v-layout>
+		<v-layout row wrap>
 			<v-flex xs3 sm3>
 				<v-card class="siteCard ml-4 mt-4 pa-0" height="142px" v-for="item in items">
-		      <v-card-title class="primary-title ma-0 pa-4">
-		      	<h3
-		      		v-bind:items="items">
-            {{ item.name }}
-          </h3>
+		      <v-card-title class="primary-title ma-0 pa-4"><h3 class="ma-0" v-bind:items="items">{{ item.name }}</h3>
 		      </v-card-title>
 		    </v-card>
 	  	</v-flex>
