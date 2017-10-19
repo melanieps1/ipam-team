@@ -21,13 +21,9 @@
               label="Select"
               single-line
               auto
-<<<<<<< HEAD
               v-bind:items="uniqueSites"
-=======
               props="filter"
-              v-bind:items="unfiltered"
               item-text="site[0].name"
->>>>>>> parent of 8d88756... Got dropdown filters to workgit add .
               v-model="select1"
               hide-details>
             </v-select>
@@ -40,7 +36,7 @@
               v-bind:default-value.prop="select2"
               label="Select"
               v-model="select2"
-              v-bind:items="unfiltered"
+              v-bind:items="uniqueSubnets"
               item-text="subnet_id"
               hide-details>
             </v-select>
@@ -74,6 +70,7 @@
             </template>
         </v-data-table>
       </v-card>
+    
     </v-container>
   </div>
   </v-app>
@@ -86,6 +83,7 @@
   export default {
   	name: 'equipment',
     props: ['subnetClicked'],
+    
     beforeMount: function() {
       var self = this;
       axios.get("http://ipam-backend.herokuapp.com/api/equipment")
@@ -108,7 +106,6 @@
 
 
       select1 : function() {
-<<<<<<< HEAD
         console.log(this.select2);
         this.items = [];
         for(var i=0;i<this.unfiltered.length;i++) {
@@ -146,18 +143,9 @@
         this.uniqueSites.push('All');
         this.uniqueSites.sort();
         this.uniqueSubnets.sort();
-        this.uniqueSubnets.unshift('All');
-      }
-=======
-        console.log(this.select1.site[0].name);
-        for(var i=0;i<this.unfiltered.length;i++) {
-          if(this.unfiltered[i].site[0].name === this.select1.site[0].name) {
-            this.items.push(this.unfiltered[i])   
-          }
-        }
-      } 
->>>>>>> parent of 8d88756... Got dropdown filters to workgit add .
+        this.uniqueSubnets.unshift('All');  
 
+      }
     },
 
     data () {
@@ -187,13 +175,10 @@
         unfiltered : [],
         items : [],
         select1 : '',
-<<<<<<< HEAD
         select2 : 0,
         uniqueSites : [],
-        uniqueSubnets : []
-=======
+        uniqueSubnets : [],
         select2 : '',
->>>>>>> parent of 8d88756... Got dropdown filters to workgit add .
       }
     }
   }
