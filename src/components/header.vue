@@ -5,18 +5,29 @@
     	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
     	<v-spacer></v-spacer>
     	<span id="user">
-    		<span id="loggedInAs">Logged in as <span id="username">{{ user }}</span></span>
+    		<span id="loggedInAs">Logged in as <span class="username">{{ user }}</span></span>
     		<button id="logout" class="userOptions">Manage Users</button>
     		<button id="manageUsers" class="userOptions">Log Out</button>
    	 	</span>
- 		<v-menu>
+ 		<v-menu offset-y bottom left>
 	 		<v-btn icon slot="activator" id="responsiveHeaderMenu" dark>
 	 			<v-icon>more_vert</v-icon>
 	 		</v-btn>
-	 		<v-list bottom left>
+	 		<v-list>
 	 			<v-list-tile>
 	 				<v-list-tile-title>Manage Users</v-list-tile-title>
+	 			</v-list-tile>
+	 			<v-list-tile>
 	 				<v-list-tile-title>Logout</v-list-tile-title>
+	 			</v-list-tile>
+	 			<v-list-tile>
+	 				<v-list-tile-title></v-list-tile-title>
+	 			</v-list-tile>
+	 			<v-list-tile>
+	 				<v-list-tile-title>Logged in as:</v-list-tile-title>
+	 			</v-list-tile>
+	 			<v-list-tile>
+	 				<v-list-tile-title class="username">{{ user }}</v-list-tile-title>
 	 			</v-list-tile>
 	 		</v-list>
 	 	</v-menu>
@@ -102,7 +113,7 @@ a, a:visited {
 	height: 32px;
 }
 
-#username {
+.username {
 	font-weight: bold;
 }
 
