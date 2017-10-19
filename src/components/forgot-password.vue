@@ -5,9 +5,9 @@
       <v-layout row>
         <v-flex s6>
           <v-card class="card">
-            <v-card-title><h4 class="logintext">Forgot Password</h4>
-            <p class="forgot-text">Enter email below and password retieval information will be sent to you.</p>  
+            <v-card-title><h4 class="logintext">Forgot Password</h4>  
             </v-card-title>
+            <p class="forgot-text">Enter email below and password retieval information will be sent to you.</p>
             <div class="card-interior">  
               <v-form v-model="valid" class="mr-4 ml-4 mt-4 mb-4">
                 <v-text-field
@@ -59,8 +59,8 @@
   }
 
   .forgot-text {
-    display: inline-block;
-    margin: auto;
+    display: block;
+    text-align: center;
     margin-top: 24px;
   }
 
