@@ -100,11 +100,6 @@ li.tabs__slider.blue {
 	height: 4px;
 }
 
-a, a:visited {
-	text-decoration: none;
-	color: #757575;
-}
-
 #user {
 	color: white;
 	margin-right: 39.5px;
@@ -170,6 +165,11 @@ a.tabs__item.tabs__item--active > a {
 	padding-left: 20px;
 	padding-right: 20px;
 	opacity: 0.7;
+	text-decoration: none;
+}
+
+a.tabs__item.tabs__item--active > a, a.tabs__item.tabs__item--active > a:visited {
+	color: #757575;
 }
 
 .router-link-exact-active{
