@@ -21,7 +21,6 @@
               label="Select"
               single-line
               auto
-              props="filter"
               v-bind:items="uniqueSites"
               v-model="select1"
               hide-details>
@@ -30,10 +29,10 @@
           <v-spacer></v-spacer>
           <v-flex xs3>
             <v-select
-              label="Select"
               single-line
               auto
-              props="filter"
+              v-bind:default-value.prop="select2"
+              label="Select"
               v-model="select2"
               v-bind:items="uniqueSubnets"
               hide-details>
@@ -75,11 +74,11 @@
 
 <script>
 
-  import subnetsFilter from './subnetsFilter.vue'
-  import sitesfilter from './sitesfilter.vue'
+  import { EventBus } from '../main.js'
 
   export default {
   	name: 'equipment',
+    props: ['subnetClicked'],
     beforeMount: function() {
       var self = this;
       axios.get("http://ipam-backend.herokuapp.com/api/equipment")
@@ -87,30 +86,45 @@
       
     },
 
+    
+
     watch : {
 
+      subnetClicked: function () {
+      EventBus.$on('subnet-clicked', function(subnetClicked) {
+        console.log(subnetClicked);
+        console.log(typeof (subnetClicked));
+        this.select2 = subnetClicked;
+        console.log(this.select2);
+      }.bind(this));
+      },
+
+
       select1 : function() {
-        console.log(this.select1);
+        console.log(this.select2);
         this.items = [];
         for(var i=0;i<this.unfiltered.length;i++) {
           if(this.unfiltered[i].site[0].name === this.select1) {
-            this.items.push(this.unfiltered[i])   
+            this.items.push(this.unfiltered[i]);   
+          } else if (this.select1 === 'All') {
+            this.items.push(this.unfiltered[i]); 
           }
         }
       },
 
       select2 : function() {
-        console.log(this.select2);
         this.items = [];
         for(var i=0;i<this.unfiltered.length;i++) {
           if(this.unfiltered[i].subnet_id === this.select2) {
             this.items.push(this.unfiltered[i])   
+          } else if (this.select2 === 'All') {
+            this.items.push(this.unfiltered[i]); 
           }
         }
       },
 
+
       unfiltered : function() {
-        console.log(this.unfiltered);
         for(var i=0;i<this.unfiltered.length;i++) {
           
           if(!this.uniqueSites.includes(this.unfiltered[i].site[0].name)) {
@@ -121,17 +135,17 @@
             this.uniqueSubnets.push(this.unfiltered[i].subnet_id);
           }
         }
+        this.uniqueSites.push('All');
+        this.uniqueSites.sort();
+        this.uniqueSubnets.sort();
+        this.uniqueSubnets.unshift('All');
       }
 
     },
 
-    components : {
-      subnetsFilter,
-      sitesfilter
-    },
-
     data () {
       return {
+        holdClick : 0,
         search: '',
         headers: [
         {
@@ -156,7 +170,7 @@
         unfiltered : [],
         items : [],
         select1 : '',
-        select2 : '',
+        select2 : 0,
         uniqueSites : [],
         uniqueSubnets : []
       }
