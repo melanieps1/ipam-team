@@ -8,6 +8,7 @@ import Routes from './routes'
 Vue.use(Vuetify)
 Vue.use(VueRouter)
 
+export const EventBus = new Vue();
 
 const router = new VueRouter ({
 
