@@ -10,7 +10,7 @@
     </div>
     <nav id="white-navbar" class="left">
 	    <ul>
-	    	<li class="nav"><router-link to="/">SITES</router-link></li>
+	    	<li class="nav"><router-link to="/sites">SITES</router-link></li>
 	    	<li class="nav"><router-link to="/components">SUBNETS</router-link></li>
 	    	<li class="nav"><router-link to="/equipment">EQUIPMENT</router-link></li>
 	    </ul>

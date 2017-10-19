@@ -1,20 +1,21 @@
 <template>
   <v-app light>
   	<div id="sites">
-  		{{ msg }}
+  		<siteCard></siteCard>
    	</div>
   </v-app>
 </template>
 
 <script>
 
+  import siteCard from './sitecard.vue'
+
   export default {
   	name: 'sites',
-  	data () {
-  		return {
-  			msg: 'Sites'
-  		}
-  	}
 
+    components: {
+      siteCard
+    }
+  	
   }
 </script>
