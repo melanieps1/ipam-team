@@ -89,7 +89,6 @@
 	margin-left: 40px;
 }
 
-
 #white-navbar {
 	height: 55px;
 	width: 100%;
@@ -175,6 +174,14 @@ a.tabs__item.tabs__item--active > a {
 
 .router-link-exact-active{
 	opacity: 1 !important;
+}
+
+@media only screen and (max-width: 409px) {
+	a.tabs__item.tabs__item--active > a {
+		padding-left: 8px !important;
+		padding-right: 8px !important;
+	}
+
 }
 
 </style>
