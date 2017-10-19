@@ -93,6 +93,18 @@
     }
   }
 
+  @media only screen and (max-width: 420px) {
+    [class*="login-btns-responsive"] {
+      margin-left: -2%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    [class*="login-btns-responsive"] {
+      margin-right: 30px;
+    }
+  }
+
   @media only screen and (max-width: 960px) {
     [class*="login-btns-responsive"] {
       width: 100%;
