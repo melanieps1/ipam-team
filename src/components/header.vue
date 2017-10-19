@@ -4,7 +4,7 @@
     	<img id="ipam-logo-white" src="../assets/ipamlogowhite.png">
     	<v-spacer></v-spacer>
     	<span id="user">
-    		Logged in as <span id="username">{{ user }}</span>
+    		<span id="loggedInAs">Logged in as <span id="username">{{ user }}</span></span>
     		<button id="logout">Manage Users</button>
     		<button id="manageUsers">Log Out</button>
    	 	</span>
@@ -103,6 +103,12 @@ a, a:visited {
 	line-height: 19px;
 	font-size: 14px;
 	height: 32px;
+}
+
+@media only screen and (max-width: 670px) {
+	[id="loggedInAs"] {
+		display: none;
+	}
 }
 
 a.tabs__item.tabs__item--active {
