@@ -93,7 +93,7 @@
 	height: 55px;
 	width: 100%;
 	font-weight: bold;
-	padding-left: 20px;
+	padding-left: 10px;
 }
 
 li.tabs__slider.blue {
@@ -177,9 +177,13 @@ a.tabs__item.tabs__item--active > a, a.tabs__item.tabs__item--active > a:visited
 }
 
 @media only screen and (max-width: 409px) {
+	a.tabs__item.tabs__item--active > a:first-of-type {
+		padding-left: 16px !important;
+	}
+
 	a.tabs__item.tabs__item--active > a {
-		padding-left: 8px !important;
-		padding-right: 8px !important;
+		padding-left: 2px !important;
+		padding-right: 2px !important;
 	}
 
 }
