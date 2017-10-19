@@ -51,7 +51,6 @@
             </template>
         </v-data-table>
       </v-card>
-    
     </v-container>
   </div>
   </v-app>
@@ -129,6 +128,7 @@
         EventBus.$emit('subnet-clicked', subnetClicked);
         console.log(subnetClicked);
         console.log(typeof (subnetClicked));
+
       }
     }
   }
