@@ -26,8 +26,8 @@
               </v-form>
               <v-flex offset-md3>
                 <div class="login-btns">
-                  <v-btn outline color="indigo" class="login-btns-responsive">
-                  Forgot Password?</v-btn>
+                  <router-link to="./forgotpassword"><v-btn outline color="indigo" class="login-btns-responsive">
+                  Forgot Password?</v-btn></router-link>
                   <v-btn color="primary" class="login-btns-responsive">Log In</v-btn>
                 </div>
               </v-flex>
@@ -78,6 +78,10 @@
     display: inline-block;
     margin-bottom: 24px;
   }
+
+a, a:visited {
+  text-decoration: none;
+}
 
   .card-interior {
     width: 80%;

@@ -20,8 +20,8 @@
               </v-form>
               <v-flex offset-md3>
                 <div class="forgot-btns">
-                  <v-btn outline color="indigo" class="forgot-btns-responsive">
-                  Cancel</v-btn>
+                  <router-link to="/login"><v-btn outline color="indigo" class="forgot-btns-responsive">
+                  Cancel</v-btn></router-link>
                   <v-btn color="primary" class="forgot-btns-responsive">Submit</v-btn>
                 </div>
               </v-flex>
