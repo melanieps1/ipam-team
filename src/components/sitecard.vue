@@ -52,7 +52,13 @@ export default {
 
 .siteCard {
 	min-width: 300px;
-	overflow: scroll;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.siteCard:hover {
+	box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.4);
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 900px) {
