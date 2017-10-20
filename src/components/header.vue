@@ -7,7 +7,7 @@
     	<span id="user">
     		<span id="loggedInAs">Logged in as <span class="username">{{ user }}</span></span>
     		<button id="logout" class="userOptions">Manage Users</button>
-    		<button id="manageUsers" class="userOptions">Log Out</button>
+    		<router-link to="./login"><button id="manageUsers" class="userOptions">Log Out</button></router-link>
    	 	</span>
  		<v-menu offset-y bottom left>
 	 		<v-btn icon slot="activator" id="responsiveHeaderMenu" dark>
@@ -120,6 +120,8 @@ li.tabs__slider.blue {
 	line-height: 19px;
 	font-size: 14px;
 	height: 32px;
+	text-decoration: none;
+	color: white;
 }
 
 #responsiveHeaderMenu {
