@@ -2,6 +2,7 @@
   
   <div class="login">
 
+    <v-container>
       <v-layout row>
         <v-flex s6>
           <v-card class="card">
@@ -35,6 +36,7 @@
           </v-card>
         </v-flex>
       </v-layout>
+    </v-container>
 
   </div>
 
@@ -61,7 +63,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 
   .login {
     width: 50%;
