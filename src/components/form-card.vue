@@ -23,6 +23,10 @@
 				<v-layout row wrap>
 					<v-text-field box textarea label="Notes"></v-text-field>
 				</v-layout>
+				<v-flex right md-3>
+					<v-btn outline>Cancel</v-btn>
+					<v-btn>Save</v-btn>
+				</v-flex>
 			</v-container>
 		</v-card>
 			
