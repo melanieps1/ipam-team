@@ -13,6 +13,11 @@
 			      <v-card-title class="primary-title ma-0 pa-4">
 			      	<h3 class="ma-0">{{ item.name }}</h3>
 			      </v-card-title>
+			      <div>
+              <v-btn flat class="viewSubnets mb-0 mr-2" color="grey darken-1">
+              	<v-icon class="mr-2 viewSubnets">visibility</v-icon>View Subnets
+              </v-btn>
+            </div>
 			    </v-card>
 		  	</v-flex>
 	  	</v-layout>
@@ -47,7 +52,13 @@ export default {
 
 .siteCard {
 	min-width: 300px;
-	overflow: scroll;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.siteCard:hover {
+	box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.4);
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 900px) {
@@ -61,6 +72,10 @@ h3 {
   font-size: 20px;
   line-height: 27px;
   margin: 0 auto;
+}
+
+.viewSubnets {
+	float: right;
 }
 	
 </style>
