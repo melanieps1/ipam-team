@@ -1,13 +1,15 @@
 <template>
 
 	<div id="formCard">
-		<v-card class="formCard" flat>
-			<v-subheader>
-				<i left class="material-icons goBack">arrow_back</i>
+		<v-card class="formCard">
+			<v-subheader center>
+				<i class="material-icons goBack">arrow_back</i>
 				<span class="goBack">Back</span>
-				<h5 center>Add New Site</h5>
+				<h5 text-xs-center>Add New Site</h5>
+				<i class="material-icons goBackHidden">arrow_back</i>
+				<span class="goBackHidden">Back</span>
 			</v-subheader>
-			<v-container grid-list-md>
+			<v-container grid-list-xs>
 				<v-layout row wrap>
 					<v-text-field box label="Site Name"></v-text-field>	
 				</v-layout>
@@ -24,8 +26,8 @@
 					<v-text-field box textarea label="Notes"></v-text-field>
 				</v-layout>
 				<v-flex right md-3>
-					<v-btn outline>Cancel</v-btn>
-					<v-btn>Save</v-btn>
+					<v-btn outline id="cancelSiteChanges">Cancel</v-btn>
+					<v-btn id="saveSite">Save</v-btn>
 				</v-flex>
 			</v-container>
 		</v-card>
@@ -42,12 +44,30 @@ li.subheader {
 
 .goBack {
 	color: #74818A;
+	text-align: left;
+}
+
+.goBackHidden {
+	color: #74818A;
+	text-align: right;
+	visibility: hidden;
+}
+
+#saveSite {
+	background-color: #C5C5C5;
+	margin-bottom: 24px;
+}
+
+#cancelSiteChanges {
+	color: #74818A;
+	border: 1px solid #74818A;
+	margin-bottom: 24px;
 }
 
 div.formCard.card {
 	width: 90%;
 	margin: 24px auto;
-	padding-bottom: 40px;
+	padding-bottom: 60px;
 }
 
 div.container.grid-list-md {
@@ -56,9 +76,10 @@ div.container.grid-list-md {
 }
 
 h5 {
-	text-align: center;
 	font-weight: bold;
 	margin: 0 auto;
+	position: relative;
+	text-align: center;
 }
 
 
