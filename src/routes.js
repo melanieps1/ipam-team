@@ -4,8 +4,8 @@ import equipment from './components/equipment.vue'
 
 export default [
 
-{path: '/sites', component: sites},
-{path: '/components', component: subnets},
+{path: '/', component: sites},
+{path: '/subnets', component: subnets},
 {path: '/equipment', component: equipment}
 
 ]
