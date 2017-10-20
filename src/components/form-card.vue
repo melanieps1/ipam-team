@@ -3,8 +3,8 @@
 	<div id="formCard">
 		<v-card class="formCard" flat>
 			<v-subheader>
-				<i left class="material-icons">arrow_back</i>
-				<span>Back</span>
+				<i left class="material-icons goBack">arrow_back</i>
+				<span class="goBack">Back</span>
 				<h5 center>Add New Site</h5>
 			</v-subheader>
 			<v-container grid-list-md>
@@ -31,6 +31,14 @@
 </template>
 
 <style scoped>
+
+li.subheader {
+	padding-top: 24px !important;
+}
+
+.goBack {
+	color: #74818A;
+}
 
 div.formCard.card {
 	width: 90%;
