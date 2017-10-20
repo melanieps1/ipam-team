@@ -11,7 +11,7 @@ import header from './components/header.vue'
 
   export default {
   	components: {
-  		'app-header': header,
+  		'app-header': header
   	}
   }
 </script>
