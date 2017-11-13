@@ -3,7 +3,9 @@ import subnets from './components/subnets.vue'
 import equipment from './components/equipment.vue'
 import login from './components/login.vue'
 import forgotpassword from './components/forgot-password.vue'
-import formcard from './components/form-card.vue'
+import addsite from './components/add-site-card.vue'
+import addsubnet from './components/add-subnet-card.vue'
+import addequipment from './components/add-equipment.vue'
 
 export default [
 
@@ -12,6 +14,8 @@ export default [
 {path: '/equipment', component: equipment},
 {path: '/login', component: login},
 {path: '/forgotpassword', component: forgotpassword},
-{path: '/form-card', component: formcard}
+{path: '/add-site', component: addsite},
+{path: '/add-subnet', component: addsubnet},
+{path: '/add-equipment', component: addequipment}
 
 ]
