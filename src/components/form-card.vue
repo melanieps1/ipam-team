@@ -70,6 +70,10 @@ div.formCard.card {
 	padding-bottom: 60px;
 }
 
+div.formCard {
+	padding: 60px;
+}
+
 div.container.grid-list-md {
 	width: 100%;
 	margin: 0 auto;
