@@ -3,8 +3,8 @@ import subnets from './components/subnets.vue'
 import equipment from './components/equipment.vue'
 import login from './components/login.vue'
 import forgotpassword from './components/forgot-password.vue'
-import addsite from './components/add-site-card.vue'
-import addsubnet from './components/add-subnet-card.vue'
+import addsite from './components/add-site.vue'
+import addsubnet from './components/add-subnet.vue'
 import addequipment from './components/add-equipment.vue'
 
 export default [
