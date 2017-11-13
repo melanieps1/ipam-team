@@ -11,16 +11,16 @@
 			</v-subheader>
 			<v-container grid-list-xs>
 				<v-layout row wrap>
-					<v-text-field box label="Subnet Name"></v-text-field>	
+					<v-text-field box label="Subnet Name*"></v-text-field>	
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Site"></v-text-field>
+					<v-text-field box label="Site*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Subnet IP Address" placeholder="000.000.000.000"></v-text-field>
+					<v-text-field box label="Subnet IP Address*" placeholder="000.000.000.000"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Subnet Mask Bits" placeholder="0-30"></v-text-field>
+					<v-text-field box label="Subnet Mask Bits*" placeholder="0-30"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box label="VLAN Number"></v-text-field>

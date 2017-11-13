@@ -11,13 +11,13 @@
 			</v-subheader>
 			<v-container grid-list-xs>
 				<v-layout row wrap>
-					<v-text-field box label="Site Name"></v-text-field>	
+					<v-text-field box label="Site Name*"></v-text-field>	
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Site Abbreviation"></v-text-field>
+					<v-text-field box label="Site Abbreviation*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field textarea label="Street Address"></v-text-field>
+					<v-text-field textarea label="Street Address*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box textarea label="Site Contacts"></v-text-field>

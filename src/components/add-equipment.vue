@@ -11,31 +11,31 @@
 			</v-subheader>
 			<v-container grid-list-xs>
 				<v-layout row wrap>
-					<v-text-field box label="Equipment Name"></v-text-field>	
+					<v-text-field box label="Equipment Name*"></v-text-field>	
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box label="Hostname"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Site"></v-text-field>
+					<v-text-field box label="Site*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Room Number"></v-text-field>
+					<v-text-field box label="Room Number*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Model"></v-text-field>
+					<v-text-field box label="Model*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box label="Serial Number"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="MAC Address"></v-text-field>
+					<v-text-field box label="MAC Address*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Reserved IP"></v-text-field>
+					<v-text-field box label="Reserved IP*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="MAB Account"></v-text-field>
+					<v-text-field box label="MAB Account*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box label="Switch"></v-text-field>
@@ -44,7 +44,7 @@
 					<v-text-field box label="Port"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
-					<v-text-field box label="Equipment"></v-text-field>
+					<v-text-field box label="Equipment Type*"></v-text-field>
 				</v-layout>
 				<v-layout row wrap>
 					<v-text-field box textarea label="Notes"></v-text-field>
